@@ -14,6 +14,10 @@ def valid_move?(board, index)
   index.between?(0, 8) && !position_taken?(board, index)
 end
 
+def move(board, index, token = "X")
+  board[index] = token
+end
+
 def position_taken?(board, index)
   if board[index] == "X" or board[index] == "O"
     return true
@@ -22,8 +26,8 @@ def position_taken?(board, index)
   end
 end
 
-def move(board, index, token = "X")
-  board[index] = token
+def valid_move?(board, index)
+  index.between?(0, 8) && !position_taken?(board, index)
 end
 
 def turn(board)
